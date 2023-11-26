@@ -1,0 +1,255 @@
+/* HomePage.css */
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .homepage {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust for spacing */
+    padding: 0 40px; /* Add padding for better spacing */
+  }
+  
+  .head-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align at the left start */
+    width: 100%; /* Make it take the full width */
+  }
+  
+  .manager-login {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+    z-index: 1000;
+  }
+  
+  .spacer {
+    height: 60px; /* Adjust the height based on your header height */
+  }
+  
+  .dropdown {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    transition: transform 0.3s; /* Add transition for the scale effect */
+  }
+  
+  .dropdown:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+  }
+  
+  .dropdown-btns {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+    font-size: 17px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 135px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 15px;
+    
+  }
+  
+  .dropdown-content div {
+    padding: 12px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+  }
+  
+  .dropdown-content div:hover {
+    background-color: #555;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Media Query for Responsive Design */
+  @media screen and (max-width: 600px) {
+    .dropdown {
+      margin-right: 0; /* Remove margin on smaller screens */
+    }
+  
+    .header-content {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .manager-login {
+      margin-right: 0; /* Remove margin on smaller screens */
+      margin-bottom: 10px; /* Add spacing between "Manager Login" and dropdowns */
+    }
+  }
+  /* Add this to your existing CSS file or create a new one */
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-top: 8px;
+  }
+  
+  button {
+    background-color: #fff;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  /* Media Query for Responsive Design */
+  @media screen and (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section {
+      text-align: center;
+    }
+  }
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header-content {
+    /* Your existing header styles */
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  /* Add the following styles for the centered image */
+  .centered-image {
+    display: block;
+    margin: 0 auto; /* This centers the image horizontally */
+    max-width: 50%; /* Adjust the width as needed */
+    height: auto; /* This ensures the image maintains its aspect ratio */
+  }
+  
+  .footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-option {
+    flex: 1;
+    max-width: 300px;
+    margin: 0 20px;
+  }
+  
+  .footer-heading {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .social-media-icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+  }
+  
+  .social-icon {
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #55acee; /* Change the color to the one suitable for your design */
+  }
+  
+  .subscribe-btn {
+    background-color: #55acee;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: #007bb5; /* Change the color to the one suitable for your design */
+  }
+  .menu{
+   padding-left: 220px;
+   
+  }
+  a {
+    text-decoration: none;
+  }
+  
+  

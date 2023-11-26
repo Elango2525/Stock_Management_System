@@ -1,0 +1,45 @@
+/* Sample CSS for ManagerTrackingPage component */
+
+.manager-tracking-page {
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #495057;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .inventory-table {
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  tr:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media screen and (max-width: 600px) {
+    th, td {
+      font-size: 14px;
+    }
+  }
+  
