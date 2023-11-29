@@ -13,12 +13,21 @@ import Stafflogin from './Stafflogin';
 import Staff from './Staff';
 import Reporting from './Reporting';
 import Tracking from './Tracking';
+import ProductTable from './ProductTable';
+import Signup from './Signup';
+import Profile from './Profile';
+import { UserProvider } from './UserContext';
+
 
 
 
 const App = () => {
+  const user = { name: 'New User', email: 'newuser@example.com', password: 'password123' };
   return (
+    
     <Router>
+    
+       <UserProvider>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
@@ -31,8 +40,13 @@ const App = () => {
         <Route path="/stafflogin" element={<Stafflogin />} />
         <Route path="/reporting" element={<Reporting />} />
         <Route path="/tracking" element={<Tracking />} />
+        <Route path="/producttable" element={<ProductTable />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
+        
         {/* Add more routes as needed */}
       </Routes>
+      </UserProvider>
     </Router>
   );
 };

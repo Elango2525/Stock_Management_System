@@ -1,14 +1,17 @@
-// Login.js
+// Signup.js
 
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './style/Login.css';
+import { useUser } from './UserContext'; // Import the useUser hook
+import './style/Signup.css';
 
-const Login = () => {
+const Signup = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { updateUser } = useUser(); // Use the useUser hook to access user context
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -20,7 +23,12 @@ const Login = () => {
     return passwordRegex.test(password);
   };
 
-  const handleLogin = () => {
+  const handleSignup = () => {
+    if (!name || !email || !password) {
+      setError('All fields are required.');
+      return;
+    }
+
     if (!validateEmail(email)) {
       setError('Please enter a valid email address.');
       return;
@@ -33,36 +41,28 @@ const Login = () => {
       return;
     }
 
-    // Encode the email to use it as a key in localStorage
-    const encodedEmail = encodeURIComponent(email);
+    // Update the user context with signup data
+    const userData = { name, email, password };
+    updateUser(userData);
 
-    // Retrieve user details from localStorage
-    const storedUserData = localStorage.getItem(encodedEmail);
-
-    if (!storedUserData) {
-      setError('User not found. Please sign up first.');
-      return;
-    }
-
-    const userData = JSON.parse(storedUserData);
-
-    // Check if the entered password matches the stored password
-    if (userData.password !== password) {
-      setError('Incorrect password.');
-      return;
-    }
-
-    // Mocking a successful login for demonstration purposes
-    alert('Login successful!');
-    navigate('/home', { state: { userName: userData.name } });
+    // Mocking a successful signup for demonstration purposes
+    alert('Signup successful!');
+    navigate('/'); // Redirect to the Profile page
   };
 
   return (
     <div className="main-container">
-      <div className="login-container">
-        <h2>Manager Login</h2>
+      <div className="signup-container">
+        <h2>User Signup</h2>
         {error && <div className="error-message">{error}</div>}
         <form>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -77,19 +77,19 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="button-l" onClick={handleLogin}>
-            Login
+          <button type="button" onClick={handleSignup}>
+            Signup
           </button>
+          <p>
+            Already have an account? <Link to="/">Login here</Link>.
+          </p>
+          <p>
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </p>
         </form>
-        <p>
-          Don't have an account?{' '}
-          <Link className="signup-link" to="/signup">
-            <span className="blink">Signup here</span>
-          </Link>
-        </p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

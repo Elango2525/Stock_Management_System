@@ -6,6 +6,20 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+const CircleProfileButton = styled.div`
+  background-color: #3498db;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+`;
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr)); /* Default: 3 columns */
@@ -97,18 +111,20 @@ const HomePage = () => {
       <header>
         <div className="header-content">
         <div className="head-content">
+          
           <span className="manager-login">Manager Login</span>
           </div>
           {/* Dropdown 1 */}
           <DropdownContainer className="dropdown">
             <button className="dropdown-btns">{dropdownValues.dropdown1 || 'Products'}</button>
             <div className="dropdown-content">
-            <Link to="/add">
+            <Link to="/add" className='link'>
               <div onClick={() => handleDropdownChange('Product', 'Add Product')}>Add Product</div>
               </Link>
               <div onClick={() => handleDropdownChange('Product', 'Edit Product')}>Edit Product</div>
               <div onClick={() => handleDropdownChange('Product', 'Remove Product')}>Remove Product</div>
-              <div onClick={() => handleDropdownChange('Product', 'View Product')}>View Product</div>
+              <Link to='/producttable'>
+              <div onClick={() => handleDropdownChange('Product', 'View Product')}>View Product</div></Link>
             </div>
           </DropdownContainer>
 
@@ -140,7 +156,8 @@ const HomePage = () => {
           <DropdownContainer className="dropdown">
             <button className="dropdown-btns">{dropdownValues.dropdown3 || 'Dashboard'}</button>
             <div className="dropdown-content">
-              <div onClick={() => handleDropdownChange('dropdown3', 'Profile')}>Profile</div>
+              <Link to='/profile'>
+              <div onClick={() => handleDropdownChange('dropdown3', 'Profile')}>Profile</div></Link>
               <Link to='/'>
               <div onClick={() => handleDropdownChange('dropdown3', 'Logout')}>Logout</div></Link>
               {/* <div onClick={() => handleDropdownChange('dropdown3', 'Option 3')}>Option 3</div>
@@ -156,7 +173,7 @@ const HomePage = () => {
         </div>
       </header>
 
-      <div className="main-content" style={{ marginTop: '80px' }}>
+      <div className="main-content" style={{ marginTop: '100px' }}>
         <GridContainer>
           {/* You can customize the grid items as needed */}
           <GridItem onClick={() => alert('Clicked on Grid 1')}><h3>Stock Management</h3></GridItem>
