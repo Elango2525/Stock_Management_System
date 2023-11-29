@@ -1,0 +1,140 @@
+/* Login.css */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.main-container {
+  background-image: url('https://www.kindpng.com/picc/m/567-5674919_inventory-management-inventory-management-system-png-transparent-png.png');
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding-left: 50%;
+}
+
+.login-container {
+  width: 300px;
+  margin-top: 40px;
+  padding: 70px;
+  border: 1px solid #ccc;
+  background-color: #045d5d;
+  border-radius: 15px;
+  animation: fadeInUp 0.5s ease;
+  transition: background-color 0.3s ease;
+}
+
+.login-container.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1s ease;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input.success-input {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf50;
+}
+
+button[type="button-l"] {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: zoomIn 0.5s ease;
+}
+
+button[type="button-l"]:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  animation: fadeIn 0.5s ease; /* Reduced duration */
+}
+
+/* Animation Keyframes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+  }
+
+  .login-container {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+/* Add this to the existing Login.css or create a new file if needed */
+
+.signup-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Blink effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

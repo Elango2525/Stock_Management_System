@@ -1,0 +1,43 @@
+/* Salestrends.css */
+
+/* Add your advanced styles for the SalesTrendsPage component */
+/* Feel free to customize the styles based on your design preferences */
+
+/* Example styles: */
+.SalesTrendsContainer {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .SalesTrendsHeader {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .SalesTrendsContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .SalesChart {
+    flex: 1;
+    /* Add your chart styles here */
+  }
+  
+  .SalesData {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .SalesDataItem {
+    margin-bottom: 15px;
+  
+    span {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+  
